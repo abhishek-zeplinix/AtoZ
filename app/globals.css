@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Matter", sans-serif;
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+  display: flex;
+  flex-direction: column;
+  /* Duplicate content to make it loop seamlessly */
+}
+
+/* marquess */
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+}
+
+.marquee-scroll {
+  font-family: "Matter", sans-serif;
+  font-size: 64px;
+  line-height: 0;
+  color: #131518;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 6s linear infinite;
+}
+
+.marquee-scroll img {
+  height: 80px;
+  padding: 0 16px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
