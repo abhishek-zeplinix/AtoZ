@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
     extend: {
+
       fontFamily: {
         matter: ['Matter', 'sans-serif'], // Add Matter font
       },
@@ -22,7 +23,8 @@ export default {
         black: '900',
       },
       colors: {
-        azText: '#131518'
+        azText: '#131518',
+        azTextLightGray: '#64748B'
       }
     },
   },
