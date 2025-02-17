@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { FaRegEye, FaRegStar } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
 const cardData = [
   {
     image: "/Homepage/blogs/first.png", // Replace with actual image URL
@@ -57,7 +59,7 @@ const Blogs = () => {
           {cardData.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-300 p-3"
+              className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow border border-gray-300 p-3"
             >
               <div>
                 {/* Card Image */}
@@ -72,26 +74,26 @@ const Blogs = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-4 space-y-3">
+                <div className="py-4 space-y-3">
                   <h3 className="text-lg font-semibold text-gray-800">
                     {card.title}
                   </h3>
                   <p className="text-sm text-gray-600">{card.author}</p>
 
                   {/* Card Footer */}
-                  <div className="flex items-center justify-between text-sm text-gray-600">
+                  <div className="flex items-center justify-between text-sm text-gray-600 bg-[#EDF2F9] rounded-lg px-2 py-1">
                     <div className="flex items-center space-x-2">
                       <span className="flex items-center space-x-1">
-                        <i className="pi pi-eye" />
+                        <FaRegEye className="h-4 w-4 text-[#94A3B8] " />
                         <span>{card.views}k</span>
                       </span>
                       <span className="flex items-center space-x-1">
-                        <i className="pi pi-star" />
+                        <FaRegStar className="h-4 w-4 text-[#94A3B8] " />
                         <span>{card.rating}</span>
                       </span>
                     </div>
-                    <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200">
-                      <i className="pi pi-arrow-right" />
+                    <button className=" rounded-full  hover:bg-gray-200">
+                      <MdArrowOutward className="h-10 w-10 text-black p-2" />
                     </button>
                   </div>
                 </div>

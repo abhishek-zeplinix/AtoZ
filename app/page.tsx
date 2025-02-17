@@ -6,6 +6,7 @@ import PowerHouse from "./components/Homepage/PowerHouse";
 import Projects from "./components/Homepage/Projects";
 import SocialLinks from "./components/Homepage/SocialLinks";
 import TellUs from "./components/Homepage/TellUs";
+import Testimonial from "./components/Homepage/Testimonial";
 import Video from "./components/Homepage/Video";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <OurProcess />
       <PowerHouse />
       <Projects />
+      <Testimonial />
       <Blogs />
       <TellUs />
       <SocialLinks />

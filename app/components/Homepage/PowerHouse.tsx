@@ -10,7 +10,7 @@ const PowerHouse = () => {
         "Helps you to build a website company that is modern, user-friendly, good SEO, and clean design.",
       buttonText: "Start with us",
       icon: "/Homepage/powerhouse/icons/icon1.png", // Replace with actual path
-      image: "/Homepage/powerhouse/skeleton.png", // Replace with actual path
+      image: "/Homepage/powerhouse/first.png", // Replace with actual path
       gradient: "from-blue-900 via-blue-700 to-blue-500",
       absolute: "/Homepage/powerhouse/absolutes/first.png",
     },
@@ -20,7 +20,7 @@ const PowerHouse = () => {
         "Helps you to build a website company that is modern, user-friendly, good SEO, and clean design.",
       buttonText: "Start with us",
       icon: "/Homepage/powerhouse/icons/icon2.png", // Replace with actual path
-      image: "/Homepage/powerhouse/skeleton.png", // Replace with actual path
+      image: "/Homepage/powerhouse/second.png", // Replace with actual path
       gradient: "from-green-900 via-green-700 to-green-500",
       absolute: "/Homepage/powerhouse/absolutes/second.png",
     },
@@ -30,7 +30,7 @@ const PowerHouse = () => {
         "Helps you to build a website company that is modern, user-friendly, good SEO, and clean design.",
       buttonText: "Start with us",
       icon: "/Homepage/powerhouse/icons/icon3.png", // Replace with actual path
-      image: "/Homepage/powerhouse/skeleton.png", // Replace with actual path
+      image: "/Homepage/powerhouse/third.png", // Replace with actual path
       gradient: "from-purple-900 via-purple-700 to-purple-500",
       absolute: "/Homepage/powerhouse/absolutes/third.png",
     },
@@ -40,7 +40,7 @@ const PowerHouse = () => {
         "Helps you to build a website company that is modern, user-friendly, good SEO, and clean design.",
       buttonText: "Start with us",
       icon: "/Homepage/powerhouse/icons/icon4.png", // Replace with actual path
-      image: "/Homepage/powerhouse/skeleton.png", // Replace with actual path
+      image: "/Homepage/powerhouse/fourth.png", // Replace with actual path
       gradient: "from-red-900 via-red-700 to-red-500",
       absolute: "/Homepage/powerhouse/absolutes/fourth.png",
     },
@@ -84,8 +84,8 @@ const PowerHouse = () => {
             <Image
               src={service.image}
               alt={`${service.title} Image`}
-              width={300}
-              height={200}
+              width={350}
+              height={230}
               className="rounded-md"
             />
           </div>

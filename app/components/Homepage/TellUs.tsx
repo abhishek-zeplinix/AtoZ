@@ -1,6 +1,9 @@
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
-const TellUs = () => {
+const TellUs = ({
+  content = "Got a Creative <br /> Challenge for us?",
+  button = "Tell Us",
+}) => {
   return (
     <div className=" mt-6 mb-6">
       <div className="relative bg-cover bg-center h-[520px] flex items-center justify-center  overflow-hidden ">
@@ -19,16 +22,20 @@ const TellUs = () => {
         ></div>
         {/* Content Overlay */}
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-[96px] font-light leading-none">
-            Got a Creative <br /> Challenge for us?
-          </h1>
+          <h1
+            className="text-[96px] font-light leading-none"
+            dangerouslySetInnerHTML={{ __html: content }}
+          ></h1>
 
           <div className="flex justify-center mt-10">
             <button
               className=" items-center flex justify-center  px-6 py-3 space-x-3 text-lg font-bold text-white border rounded-full border-white  transition duration-300 ;"
               style={{ background: "#13151885" }}
             >
-              <span className="text-[30px]">Tell Us</span>
+              <span
+                className="text-[30px]"
+                dangerouslySetInnerHTML={{ __html: button }}
+              ></span>
               <div className="flex items-center justify-center w-10 h-8 border border-white rounded-full">
                 <MdArrowOutward className="h-8" />
               </div>

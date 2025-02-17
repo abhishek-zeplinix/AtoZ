@@ -25,7 +25,10 @@ export default {
       colors: {
         azText: '#131518',
         azTextLightGray: '#64748B'
-      }
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(10.94deg, #131518 8.1%, #2D2D2D 93.73%)'
+      },
     },
   },
   plugins: [],

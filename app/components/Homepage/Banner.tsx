@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { MdArrowOutward } from "react-icons/md";
 
 const Banner = () => {
   return (
@@ -10,18 +11,43 @@ const Banner = () => {
           backgroundImage: "url('/Homepage/banner.png')",
         }}
       >
-        <div className="relative text-center text-white px-4 grid grid-cols-2 gap-4 w-full">
-          {/* Column 1 */}
+        <div className="absolute top-12 left-16 text-white text-[32px]">
+          <h1>👋🏻 Hi, </h1>
+          <h1>We are Design & Branding</h1>
+          <h1> agency.</h1>
+        </div>
+        <div className="absolute bottom-5">
+          <div className="relative text-center text-white px-4 grid grid-cols-2 gap-4 w-full">
+            {/* Column 1 */}
 
-          {/* Column 2 */}
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/Homepage/circle.png" alt="" width={300} height={300} />
-          </div>
-          <div className="flex flex-col items-start justify-center mr-12">
-            <h1 className="text-[78px] font-thin mb-4 text-right leading-tight">
-              Building the <span className="italic">“Brands”</span> You’ve
-              Always Imagined...
-            </h1>
+            {/* Column 2 */}
+            <div className="flex flex-col items-center justify-center relative">
+              <div className="absolute left-[20px] bottom-0">
+                <Image
+                  src="/Homepage/circle.png"
+                  alt=""
+                  width={300}
+                  height={300}
+                />
+              </div>
+              <div className="absolute left-[30%]  top-[60%] transform -translate-x-1/2 -translate-y-1/2">
+                <div className="flex justify-center items-center">
+                  <button className="bg-white text-black rounded-full px-4 py-3 flex gap-3 items-center">
+                    <span>See Us in Action</span>
+                    <span>
+                      <MdArrowOutward className="p-1 h-6 w-6 text-black border border-1 border-black rounded-full" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-start justify-center mr-12">
+              <h1 className="text-[78px] font-thin mb-4 text-right leading-tight">
+                Building the <span className="italic">“Brands”</span> You’ve
+                Always Imagined...
+              </h1>
+            </div>
           </div>
         </div>
       </div>

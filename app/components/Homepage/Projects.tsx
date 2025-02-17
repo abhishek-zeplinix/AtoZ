@@ -8,37 +8,37 @@ const cardData = [
     id: 1,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "UI/UX",
-    imageUrl: "/path-to-image1.jpg",
+    imageUrl: "/Homepage/projects/first.png",
   },
   {
     id: 2,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "Creative",
-    imageUrl: "/path-to-image2.jpg",
+    imageUrl: "/Homepage/projects/second.png",
   },
   {
     id: 3,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "Classics",
-    imageUrl: "/path-to-image3.jpg",
+    imageUrl: "/Homepage/projects/third.png",
   },
   {
     id: 4,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "Videography",
-    imageUrl: "/path-to-image4.jpg",
+    imageUrl: "/Homepage/projects/four.png",
   },
   {
     id: 5,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "Media",
-    imageUrl: "/path-to-image5.jpg",
+    imageUrl: "/Homepage/projects/fifth.png",
   },
   {
     id: 6,
     title: "Upskill - The first super app in the United Arab Emirates",
     category: "Research",
-    imageUrl: "/path-to-image6.jpg",
+    imageUrl: "/Homepage/projects/six.png",
   },
 ];
 
@@ -83,7 +83,7 @@ const Projects = () => {
             .map((card, index) => (
               <div
                 key={card.id}
-                className={`relative bg-[#F8F9FC] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow ${
+                className={`relative  p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow ${
                   index === 0 ? "" : "mt-20"
                 }`}
               >
@@ -93,7 +93,7 @@ const Projects = () => {
                 </div>
 
                 {/* Image */}
-                <div className="w-full h-64 relative overflow-hidden rounded-lg">
+                <div className="w-full h-80 relative overflow-hidden rounded-lg">
                   <Image
                     src={card.imageUrl}
                     alt="title"
@@ -103,7 +103,7 @@ const Projects = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-4 text-lg font-semibold text-black">
+                <h3 className="mt-4 text-lg font-semibold text-white">
                   {card.title}
                 </h3>
               </div>
@@ -117,7 +117,7 @@ const Projects = () => {
             .map((card, index) => (
               <div
                 key={card.id}
-                className={`relative bg-[#F8F9FC] p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow ${
+                className={`relative  p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow ${
                   index === 0 ? "mt-20" : "mt-32"
                 }`}
               >
@@ -137,7 +137,7 @@ const Projects = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-4 text-lg font-semibold text-black">
+                <h3 className="mt-4 text-lg font-semibold text-white">
                   {card.title}
                 </h3>
               </div>

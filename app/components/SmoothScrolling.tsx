@@ -1,10 +1,6 @@
 "use client";
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { ReactNode } from "react";
-
-interface SmoothScrollingProps {
-  children: ReactNode;
-}
+import { SmoothScrollingProps } from "../types";
 
 const SmoothScrolling: React.FC<SmoothScrollingProps> = ({ children }) => {
   return (

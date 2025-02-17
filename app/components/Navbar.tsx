@@ -3,10 +3,18 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { IoIosSearch } from "react-icons/io";
+import Link from "next/link";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/our-portfolio", label: "Our Portfolio" },
+    { href: "/our-process", label: "Our Process" },
+    { href: "/our-solutions", label: "Our Solutions" },
+  ];
   const openDrawer = () => {
     setIsOpen(true); // First, show the drawer
     gsap.fromTo(
@@ -26,7 +34,7 @@ const Navbar = () => {
     });
   };
   return (
-    <nav className="bg-white font-matter mx-2">
+    <nav className="bg-white font-matter mx-2 ">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Left section - Links */}
         <div className="flex items-center space-x-4 text-gray-600 text-sm">
@@ -49,13 +57,15 @@ const Navbar = () => {
 
         {/* Center section - Logo */}
         <div className="flex items-center">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            className="h-10 w-auto mr-2"
-            width={100}
-            height={100}
-          />
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              className="h-10 w-auto mr-2 cursor-pointer"
+              width={100}
+              height={100}
+            />
+          </Link>
         </div>
 
         {/* Right section - Search & Menu */}
@@ -101,30 +111,16 @@ const Navbar = () => {
 
             {/* Drawer Content */}
             <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <a
-                href="#home"
-                className="text-2xl font-semibold hover:underline"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="text-2xl font-semibold hover:underline"
-              >
-                About
-              </a>
-              <a
-                href="#services"
-                className="text-2xl font-semibold hover:underline"
-              >
-                Services
-              </a>
-              <a
-                href="#contact"
-                className="text-2xl font-semibold hover:underline"
-              >
-                Contact
-              </a>
+              {links.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="text-2xl font-semibold hover:underline"
+                  onClick={closeDrawer}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

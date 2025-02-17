@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScrolling from "./components/SmoothScrolling";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+// import CustomCursor from "./components/CustomCursor";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
+        {/* <CustomCursor /> */}
         <Navbar />
         <div className="flex-grow">
           <SmoothScrolling>{children}</SmoothScrolling>
