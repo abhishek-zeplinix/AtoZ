@@ -56,11 +56,20 @@ const ProcessAchievement: React.FC<ProcessAchievementProps> = ({
         {/* Process Sections */}
         <div className="space-y-10 px-10">
           {processData.map((section, index) => (
-            <div key={index} className="flex justify-between">
+            <div
+              key={index}
+              className="flex justify-between border-b border-[#475569] last:border-none pb-10 last:pb-0"
+            >
               <h3 className="text-xl italic">{section.title}</h3>
               <ul className="pl-6 space-y-2 text-right">
                 {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
+                  <li
+                    key={itemIndex}
+                    className="flex justify-end items-center space-x-2"
+                  >
+                    <span className="h-2 w-2 bg-white rounded-full"></span>
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </div>

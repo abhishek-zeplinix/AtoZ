@@ -110,7 +110,7 @@ const Navbar = () => {
             </button>
 
             {/* Drawer Content */}
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="flex flex-col items-center justify-center h-full space-y-8 ">
               {links.map((link, index) => (
                 <Link
                   key={index}

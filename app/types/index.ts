@@ -31,3 +31,26 @@ export interface ProcessAchievementProps {
     data?: ProcessData[];
     mainTitle?: string;
 }
+
+export interface SubPageBannerProps {
+    title: string;
+    subText: string;
+    iconImage: string;
+    bannerImage: string;
+    titlePosition?: {
+        top: string;
+        left: string;
+    };
+    bannerPosition?: {
+        top: string;
+        right: string;
+    };
+    iconImageSize?: {
+        width: number;
+        height: number;
+    };
+    bannerImageSize?: {
+        width: number;
+        height: number;
+    };
+}
