@@ -49,13 +49,8 @@ const Footer = () => {
 
           {/* Right Section */}
           <div className="w-full md:w-1/2 text-center relative ">
-            <div className="text-gray-400 absolute top-[-95px] w-full overflow-hidden">
-              <div className="animate-scroll">
-                <p className="text-[25px]">www.zeplinixmedia.com</p>
-                <p className="text-[25px]">www.zeplinixmedia.com</p>
-                <p className="text-[25px]">www.zeplinixmedia.com</p>
-                <p className="text-[25px]">www.zeplinixmedia.com</p>
-              </div>
+            <div className="text-gray-400 absolute top-[-135px] w-full overflow-hidden">
+              <Image src="/footertext.svg" alt="" width={520} height={300} />
             </div>
           </div>
         </div>

@@ -10,8 +10,10 @@ const AboutUsBanner = () => {
         subText={`Building Bridges <br /> Between <span class='italic'>Brands</span> and <br /> <span class='italic'>Audiences.</span>`}
         iconImage="/CommonbannerImage/abouticon.png"
         bannerImage="/CommonbannerImage/aboutBanner.png"
-        titlePosition={{ top: "-20px", left: "-30px" }}
+        titlePosition={{ top: "-40px", left: "-50px" }}
         bannerPosition={{ top: "-10px", right: "0px" }}
+        iconImageSize={{ width: 120, height: 120 }}
+        bannerImageSize={{ width: 300, height: 300 }}
       />
       <AboutVideo />
     </>
