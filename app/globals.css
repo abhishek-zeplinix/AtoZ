@@ -74,3 +74,28 @@ body {
     transform: translateX(-100%);
   }
 }
+
+.page-transition-circle-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.page-transition-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(23, 23, 23);
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 600ms ease-in-out;
+  animation: circle-expand 1s ease-out forwards;
+}
+
+@keyframes circle-expand {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
