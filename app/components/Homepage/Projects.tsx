@@ -2,8 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
+import { CardData } from "@/app/types";
 
-const cardData = [
+export const cardData: CardData[] = [
   {
     id: 1,
     title: "Upskill - The first super app in the United Arab Emirates",

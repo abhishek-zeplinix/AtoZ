@@ -54,3 +54,11 @@ export interface SubPageBannerProps {
         height: number;
     };
 }
+
+
+export interface CardData {
+    id: number;
+    category: string;
+    imageUrl: string;
+    title: string;
+}
