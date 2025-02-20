@@ -1,10 +1,48 @@
+"use client";
+import { gsap } from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 const Banner = () => {
+  const sectionRef = useRef(null);
+  const textRef1 = useRef<HTMLHeadingElement>(null);
+  const textRef2 = useRef<HTMLHeadingElement>(null);
+  const textRef3 = useRef<HTMLHeadingElement>(null);
+  const textRef4 = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    // Sequential animation for text elements
+    const timeline = gsap.timeline();
+
+    timeline
+      .fromTo(
+        textRef1.current,
+        { opacity: 0, y: 20 }, // Initial state
+        { opacity: 1, y: 0, duration: 1 } // Final state
+      )
+      .fromTo(
+        textRef2.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.3 },
+        "+=0.3" // Delay of 0.3s between animations
+      )
+      .fromTo(
+        textRef3.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4 },
+        "+=0.3"
+      )
+      .fromTo(
+        textRef4.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        "+=0.3"
+      );
+  }, []);
+
   return (
-    <div className="mx-6 rounded-lg">
+    <div className="mx-6 rounded-lg" ref={sectionRef}>
       <div
         className="relative bg-cover bg-center h-[600px] flex items-center justify-center rounded-lg"
         style={{
@@ -12,9 +50,16 @@ const Banner = () => {
         }}
       >
         <div className="absolute top-12 left-16 text-white text-[32px]">
-          <h1>👋🏻 Hi, </h1>
-          <h1>We are Design & Branding</h1>
-          <h1> agency.</h1>
+          <h1 className="flex items-center text-animation " ref={textRef1}>
+            <p className="animate-wave">👋🏻</p> Hi,{" "}
+          </h1>
+          <h1 className="text-animation" ref={textRef2}>
+            We are Design & Branding
+          </h1>
+          <h1 className="text-animation" ref={textRef3}>
+            {" "}
+            agency.
+          </h1>
         </div>
         <div className="absolute bottom-5">
           <div className="relative text-center text-white px-4 grid grid-cols-2 gap-4 w-full">
@@ -28,6 +73,7 @@ const Banner = () => {
                   alt=""
                   width={300}
                   height={300}
+                  className="animate-spin-slow"
                 />
               </div>
               <div className="absolute left-[30%]  top-[60%] transform -translate-x-1/2 -translate-y-1/2">
@@ -43,7 +89,10 @@ const Banner = () => {
             </div>
 
             <div className="flex flex-col items-start justify-center mr-12">
-              <h1 className="text-[78px] font-thin mb-4 text-right leading-tight">
+              <h1
+                className="text-[78px] font-thin mb-4 text-right leading-tight"
+                ref={textRef4}
+              >
                 Building the <span className="italic">“Brands”</span> You’ve
                 Always Imagined...
               </h1>

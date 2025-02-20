@@ -62,6 +62,12 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        wave: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(10deg)' },
+          '50%': { transform: 'rotate(-10deg)' },
+          '75%': { transform: 'rotate(10deg)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -69,6 +75,8 @@ export default {
         "animate-frame-contact-me-btn-icon":
           "frame-contact-me-btn-icon .3s ease",
         "infinite-scroll": "infinite-scroll 25s linear infinite",
+        'spin-slow': 'spin 5s linear infinite',
+        "wave": 'wave 1.5s ease-in-out infinite',
       },
     },
   },
