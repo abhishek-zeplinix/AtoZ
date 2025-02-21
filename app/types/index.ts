@@ -62,3 +62,28 @@ export interface CardData {
     imageUrl: string;
     title: string;
 }
+
+export interface Portfolio {
+    title: string;
+    label: string;
+    services: string[];
+    industry: string;
+    tools: string[];
+    clientOverview: string;
+    challenge: string[];
+    approach: string[];
+    results: string[];
+    clientTestimonial: string;
+    images: string[];
+}
+
+
+export interface ProductSlider {
+    id: number,
+    category: string,
+    title: string,
+    description: string,
+    image: string,
+    bgColor: string
+
+}

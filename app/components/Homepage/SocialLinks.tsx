@@ -9,22 +9,22 @@ const SocialLinks = () => {
     {
       id: 1,
       name: "Instagram",
-      iconClass: <RiInstagramFill />,
+      icon: RiInstagramFill,
     },
     {
       id: 2,
       name: "Facebook",
-      iconClass: <RiFacebookFill />,
+      icon: RiFacebookFill,
     },
     {
       id: 3,
       name: "LinkedIn",
-      iconClass: <RiLinkedinFill />,
+      icon: RiLinkedinFill,
     },
     {
       id: 4,
       name: "WhatsApp",
-      iconClass: <RiWhatsappFill />,
+      icon: RiWhatsappFill,
     },
   ];
 
@@ -68,20 +68,23 @@ const SocialLinks = () => {
       </div>
       <div className="flex justify-center">
         <div className="flex flex-col w-full max-w-[100%] mx-[10rem] px-5 space-y-4 mt-6 mb-6">
-          {socialLinks.map((link) => (
-            <div
-              key={link.id}
-              className="flex items-center justify-between border-[#475569] border-b pb-4 last:border-b-0 border-opacity-20"
-            >
-              <div className="flex items-center space-x-5">
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 text-white">
-                  {/* Dynamic Icon */}
-                  <i>{link.iconClass}</i>
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <div
+                key={link.id}
+                className="flex items-center justify-between border-[#475569] border-b pb-4 last:border-b-0 border-opacity-20"
+              >
+                <div className="flex items-center space-x-5">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 text-white">
+                    {/* Dynamic Icon */}
+                    <Icon className="w-5 h-5" />
+                  </div>
                 </div>
+                <span className="italic text-azText">{link.name}</span>
               </div>
-              <span className="italic text-azText">{link.name}</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>
