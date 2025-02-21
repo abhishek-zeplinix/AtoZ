@@ -1,10 +1,13 @@
 "use client";
 import type { Testimonial } from "@/app/types";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules"; // Import Autoplay module
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import gsap from "gsap";
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -48,8 +51,56 @@ const testimonials: Testimonial[] = [
   },
 ];
 const Testimonial = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    // Split the text into characters
+    const split = new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    // Animate characters appearing when scrolled into view
+    gsap.from(q(".title .char"), {
+      opacity: 0,
+      y: 10,
+      duration: 2,
+      ease: "power1.out",
+      stagger: 0.2,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top 80%", // Adjust visibility trigger
+        end: "top 50%",
+        scrub: true,
+      },
+    });
+
+    // Scroll-triggered text animation
+    gsap.fromTo(
+      q(".text-animation"),
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        stagger: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: q(".text-animation"),
+          start: "top 90%",
+          end: "top 90%",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
   return (
-    <div>
+    <div className="" ref={sectionRef}>
       <div className="py-16  bg-white mt-20">
         <div className="max-w-7xl mx-auto text-center">
           <div className="relative mb-12">
@@ -63,7 +114,7 @@ const Testimonial = () => {
               />
             </div>
 
-            <h2 className="text-[76px] leading-tight z-10 relative">
+            <h2 className="text-[76px] leading-tight z-10 relative title">
               What <span className="italic text-primary">People</span> says{" "}
               <br />
               <span className="italic text-primary">About Us</span>

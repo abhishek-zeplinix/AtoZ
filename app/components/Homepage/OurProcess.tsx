@@ -1,7 +1,62 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-
+import React, { useEffect, useRef } from "react";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const OurProcess = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    gsap.from(q(".title .char"), {
+      opacity: 0.3,
+      duration: 0.1,
+      start: "top 80%",
+      end: "top 60%",
+      ease: "power1.out",
+      stagger: 0.6,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: true,
+        onEnter: () => {
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.2,
+              duration: 0.3,
+            },
+          });
+
+          tl.fromTo(
+            q(".text-animation"),
+            {
+              y: 100,
+            },
+            {
+              y: 0,
+            }
+          );
+        },
+      },
+    });
+  }, []);
   const steps = [
     {
       title: "Discover",
@@ -59,15 +114,18 @@ const OurProcess = () => {
     );
   };
   return (
-    <div className="mt-20">
+    <div className="mt-20" ref={sectionRef}>
       <div className="text-center">
         <div>
-          <label htmlFor="" className="bg-[#E2E8F0] text-azText p-2 rounded-md">
+          <label
+            htmlFor=""
+            className="bg-[#E2E8F0]  text-azText p-2 rounded-md"
+          >
             Our Process
           </label>
         </div>
         <div>
-          <h1 className="italic text-[70px]">We Design. You Grow</h1>
+          <h1 className="italic text-[70px] title">We Design. You Grow</h1>
         </div>
 
         <div>

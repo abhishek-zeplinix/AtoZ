@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
 import { CardData } from "@/app/types";
-
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import gsap from "gsap";
 export const cardData: CardData[] = [
   {
     id: 1,
@@ -44,8 +46,61 @@ export const cardData: CardData[] = [
 ];
 
 const Projects = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    gsap.from(q(".title .char"), {
+      opacity: 0.3,
+      duration: 0.3,
+      ease: "power1.out",
+      stagger: 0.7,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: true,
+        onEnter: () => {
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.8,
+              duration: 0.3,
+            },
+          });
+
+          tl.fromTo(
+            q(".text-animation"),
+            {
+              y: 100,
+            },
+            {
+              y: 0,
+            }
+          );
+        },
+      },
+    });
+  }, []);
   return (
-    <div className="relative bg-[#131518] mt-28 rounded-t-[70px] overflow-hidden pb-20">
+    <div
+      className="relative bg-[#131518] mt-28 rounded-t-[70px] overflow-hidden pb-20"
+      ref={sectionRef}
+    >
       <div className="absolute top-0 left-0 w-full z-0">
         {Array.from({ length: 100 }).map((_, index) => (
           <div
@@ -70,11 +125,14 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <div className="ml-24 leading-tight pt-12 text-white">
-        <h1 className="text-[76px]">
-          Our <span className="italic">Featured</span>
-        </h1>
-        <h1 className="text-[76px]">Project</h1>
+      <div className="ml-24 leading-tight pt-12 text-white ">
+        <div className="title">
+          <h1 className="text-[76px] ">
+            Our <span className="italic">Featured</span>
+          </h1>
+          <br />
+          <h1 className="text-[76px]">Project</h1>
+        </div>
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-40 px-28 pt-20 ">
         {/* Left Column */}

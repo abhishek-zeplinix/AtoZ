@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaRegEye, FaRegStar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import gsap from "gsap";
 const cardData = [
   {
     image: "/Homepage/blogs/first.png", // Replace with actual image URL
@@ -48,10 +52,62 @@ const cardData = [
 ];
 
 const Blogs = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    gsap.from(q(".title .char"), {
+      opacity: 0.3,
+      duration: 0.3,
+      start: "top 70%",
+      end: "top 30%",
+      ease: "power1.out",
+      stagger: 0.7,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: true,
+        onEnter: () => {
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.8,
+              duration: 0.3,
+            },
+          });
+
+          tl.fromTo(
+            q(".text-animation"),
+            {
+              y: 100,
+            },
+            {
+              y: 0,
+            }
+          );
+        },
+      },
+    });
+  }, []);
   return (
-    <div className="mt-20">
+    <div className="mt-20" ref={sectionRef}>
       <div className="text-center">
-        <h1 className="text-[70px]">Read Our Blogs</h1>
+        <h1 className="text-[70px] title">Read Our Blogs</h1>
       </div>
       <div className=" py-10 px-5 md:px-10 lg:px-20">
         {/* Card Grid */}

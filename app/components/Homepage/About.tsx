@@ -1,22 +1,81 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import ClientSlider from "./ClientSlider";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const About = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    gsap.from(q(".title .char"), {
+      start: "top 70%",
+      end: "top 40%",
+      opacity: 0.3,
+      duration: 0.5,
+      ease: "power1.out",
+      stagger: 0.1,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 70%",
+        scrub: true,
+        onEnter: () => {
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.4,
+              duration: 1,
+            },
+          });
+
+          tl.fromTo(
+            q(".text-animation"),
+            {
+              y: 100,
+            },
+            {
+              y: 0,
+            }
+          );
+        },
+      },
+    });
+  }, []);
+
+  // Set Active Session
   return (
-    <div className="mt-10 ">
+    <div className="mt-10 " ref={sectionRef}>
       <div className="space-y-4">
         <div>
-          <h1 className="italic text-[70px] font-thin text-center text-azText">
+          <h1 className="italic  title text-[70px] font-thin text-center text-azText">
             Who we are?
           </h1>
         </div>
-        <div>
-          <p className="text-center text-azTextLightGray">
+        <div className="overflow-hidden">
+          <p className="text-center text-azTextLightGray text-animation">
             We are brand builders with passion, creators with purpose, tech
             enthusiasts by nature, and innovators at our
           </p>
-          <p className="text-center text-azTextLightGray">
+          <p className="text-center text-azTextLightGray text-animation">
             core. Our mission is simple yet bold: to bring the finest Indian
             creative talent to the world.
           </p>

@@ -1,8 +1,62 @@
+"use client";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const PowerHouse = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const q = gsap.utils.selector(sectionRef);
+
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
+
+    gsap.from(q(".title .char"), {
+      opacity: 0.3,
+      duration: 0.3,
+      ease: "power1.out",
+      stagger: 0.7,
+
+      scrollTrigger: {
+        trigger: q(".title"),
+        start: "top center",
+        scrub: true,
+      },
+    });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: true,
+        onEnter: () => {
+          const tl = gsap.timeline({
+            defaults: {
+              stagger: 0.8,
+              duration: 0.3,
+            },
+          });
+
+          tl.fromTo(
+            q(".text-animation"),
+            {
+              y: 100,
+            },
+            {
+              y: 0,
+            }
+          );
+        },
+      },
+    });
+  }, []);
   const services = [
     {
       title: "Branding Solution",
@@ -46,8 +100,8 @@ const PowerHouse = () => {
     },
   ];
   return (
-    <div className="space-y-8 mx-4 mt-20">
-      <div>
+    <div className="space-y-8 mx-4 mt-20" ref={sectionRef}>
+      <div className="title text-center leading-tight">
         <h1 className="text-[76px] text-center">
           Your <span className="italic">One-Stop</span>
         </h1>

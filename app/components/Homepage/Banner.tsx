@@ -49,7 +49,7 @@ const Banner = () => {
           backgroundImage: "url('/Homepage/banner.png')",
         }}
       >
-        <div className="absolute top-12 left-16 text-white text-[32px]">
+        <div className="absolute top-12 left-16 text-white text-[32px] overflow-hidden">
           <h1 className="flex items-center text-animation " ref={textRef1}>
             <p className="animate-wave">👋🏻</p> Hi,{" "}
           </h1>
@@ -88,7 +88,7 @@ const Banner = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-start justify-center mr-12">
+            <div className="flex flex-col items-start justify-center mr-12 overflow-hidden">
               <h1
                 className="text-[78px] font-thin mb-4 text-right leading-tight"
                 ref={textRef4}
