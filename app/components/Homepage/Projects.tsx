@@ -152,12 +152,13 @@ const Projects = () => {
                 </div>
 
                 {/* Image */}
-                <div className="w-full h-80 relative overflow-hidden rounded-lg">
+                <div className=" relative overflow-hidden rounded-lg">
                   <Image
                     src={card.imageUrl}
                     alt="title"
-                    fill
-                    className="object-cover"
+                    className="object-cover w-full lg:h-[450px] md:h-[450px] h-[350px]"
+                    height={500}
+                    width={400}
                   />
                 </div>
 
@@ -188,12 +189,13 @@ const Projects = () => {
                 </div>
 
                 {/* Image */}
-                <div className="w-full h-64 relative overflow-hidden rounded-lg">
+                <div className=" relative overflow-hidden rounded-lg">
                   <Image
                     src={card.imageUrl}
                     alt="title"
-                    fill
-                    className="object-cover"
+                    className="object-cover w-full lg:h-[450px] md:h-[450px] h-[350px]"
+                    height={500}
+                    width={400}
                   />
                 </div>
 
