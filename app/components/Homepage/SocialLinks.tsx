@@ -67,7 +67,7 @@ const SocialLinks = () => {
         <Marquee />
       </div>
       <div className="flex justify-center">
-        <div className="flex flex-col w-full max-w-[100%] mx-[10rem] px-5 space-y-4 mt-6 mb-6">
+        <div className="flex flex-col w-full max-w-[100%] lg:mx-[10rem] md:mx-[10rem] mx-[1rem] px-5 space-y-4 mt-6 mb-6">
           {socialLinks.map((link) => {
             const Icon = link.icon;
             return (
