@@ -66,7 +66,7 @@ const About = () => {
     <div className="mt-10 " ref={sectionRef}>
       <div className="space-y-4">
         <div>
-          <h1 className="italic  title text-[70px] font-thin text-center text-azText">
+          <h1 className="italic  title lg:text-[70px] md:text-[70px] text-[52px] font-thin text-center text-azText">
             Who we are?
           </h1>
         </div>

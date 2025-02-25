@@ -23,7 +23,7 @@ const TellUs = ({
         {/* Content Overlay */}
         <div className="relative z-10 text-center text-white px-4">
           <h1
-            className="text-[96px] font-light leading-none"
+            className="lg:text-[96px] md:text-[96px] text-[56px] font-light leading-none"
             dangerouslySetInnerHTML={{ __html: content }}
           ></h1>
 

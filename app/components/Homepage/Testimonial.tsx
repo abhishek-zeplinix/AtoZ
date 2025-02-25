@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import type { Testimonial } from "@/app/types";
 import Image from "next/image";
@@ -114,7 +115,7 @@ const Testimonial = () => {
               />
             </div>
 
-            <h2 className="text-[76px] leading-tight z-10 relative title">
+            <h2 className="lg:text-[76px] md:text-[76px] text-[56px] leading-tight z-10 relative title">
               What <span className="italic text-primary">People</span> says{" "}
               <br />
               <span className="italic text-primary">About Us</span>

@@ -102,17 +102,17 @@ const PowerHouse = () => {
   return (
     <div className="space-y-8 mx-4 mt-20" ref={sectionRef}>
       <div className="title text-center leading-tight">
-        <h1 className="text-[76px] text-center">
+        <h1 className="lg:text-[76px] md:text-[76px] text-[42px] text-center">
           Your <span className="italic">One-Stop</span>
         </h1>
-        <h1 className="text-[76px] text-center">
+        <h1 className="lg:text-[76px] md:text-[76px] text-[42px] text-center">
           <span className="italic">Creative</span> Powerhouse
         </h1>
       </div>
       {services.map((service, index) => (
         <div
           key={index}
-          className={`flex items-center justify-between pt-10 pl-10 rounded-lg shadow-lg bg-gradient-to-r bg-[#151515] bg-blur-lg relative`}
+          className={`flex lg:flex-row md:flex-row flex-col items-center justify-between pt-10 lg:pl-10 md:pl-10 pl-5 rounded-lg shadow-lg bg-gradient-to-r bg-[#151515] bg-blur-lg relative`}
         >
           {/* Left Section */}
           <div className="text-white space-y-4 max-w-md pb-10">
@@ -144,13 +144,13 @@ const PowerHouse = () => {
             />
           </div>
 
-          <div className="absolute left-[-60px] bottom-0 overflow-hidden w-full h-[350px]">
+          <div className="absolute lg:left-[-60px] md:left-[-60px] right-0  bottom-0 overflow-hidden lg:w-full md:w-full w-full h-[350px]">
             <Image
               src={service.absolute}
               alt={`${service.title} Image`}
-              width={800}
+              width={600}
               height={300}
-              className="object-cover"
+              className="object-cover "
             />
           </div>
         </div>

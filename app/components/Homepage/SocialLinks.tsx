@@ -41,7 +41,7 @@ const SocialLinks = () => {
                 className="marquee-scroll flex items-center justify-center"
               >
                 {/* First Boho HR text */}
-                <span className="bordereffect text-[96px] font-light  lg:ml-20">
+                <span className="bordereffect text-[96px] font-light  ml-25 lg:ml-20 md:ml-20">
                   Follow Us
                 </span>
 

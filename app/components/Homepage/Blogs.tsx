@@ -107,7 +107,9 @@ const Blogs = () => {
   return (
     <div className="mt-20" ref={sectionRef}>
       <div className="text-center">
-        <h1 className="text-[70px] title">Read Our Blogs</h1>
+        <h1 className="lg:text-[70px] md:text-[70px] text-[40px] title">
+          Read Our Blogs
+        </h1>
       </div>
       <div className=" py-10 px-5 md:px-10 lg:px-20">
         {/* Card Grid */}

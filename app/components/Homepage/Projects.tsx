@@ -98,7 +98,7 @@ const Projects = () => {
   }, []);
   return (
     <div
-      className="relative bg-[#131518] mt-28 rounded-t-[70px] overflow-hidden pb-20"
+      className="relative bg-[#131518] lg:mt-28 md:mt-28 mt-10 rounded-t-[70px] overflow-hidden pb-20"
       ref={sectionRef}
     >
       <div className="absolute top-0 left-0 w-full z-0">
@@ -125,18 +125,18 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <div className="ml-24 leading-tight pt-12 text-white ">
+      <div className="lg:ml-24 md:ml-24 ml-10 leading-tight pt-12 text-white ">
         <div className="title">
-          <h1 className="text-[76px] ">
+          <h1 className="lg:text-[76px] md:text-[76px] text-[56px] ">
             Our <span className="italic">Featured</span>
           </h1>
           <br />
-          <h1 className="text-[76px]">Project</h1>
+          <h1 className="lg:text-[76px] md:text-[76px] text-[56px]">Project</h1>
         </div>
       </div>
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-40 px-28 pt-20 ">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-40 lg:px-28 md:px-28 px-2 lg:pt-20 md:pt-20 pt-5">
         {/* Left Column */}
-        <div className="space-y-40">
+        <div className="lg:space-y-40 md:space-y-40 space-y-5">
           {cardData
             .filter((_, index) => index % 2 === 0)
             .map((card, index) => (
@@ -170,14 +170,16 @@ const Projects = () => {
         </div>
 
         {/* Right Column */}
-        <div className="space-y-40 mt-20">
+        <div className="lg:space-y-40 md:space-y-40 space-y-5 lg:mt-20 md:mt-20 mt-0">
           {cardData
             .filter((_, index) => index % 2 !== 0)
             .map((card, index) => (
               <div
                 key={card.id}
                 className={`relative  p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow ${
-                  index === 0 ? "mt-20" : "mt-32"
+                  index === 0
+                    ? "lg:mt-20 md:mt-20 mt-0"
+                    : "lg:mt-32 md:mt-32 mt-0"
                 }`}
               >
                 {/* Tag */}
@@ -204,7 +206,7 @@ const Projects = () => {
         </div>
       </div>
       <div>
-        <div className="flex justify-left mt-10 ml-24">
+        <div className="flex justify-left mt-10 lg:ml-24 md:ml-24 ml-5">
           <div className="flex items-center gap-3">
             <button
               className="text-center items-center px-6 py-3 space-x-3 text-lg font-bold text-white border rounded-full border-white  transition duration-300 bg-blur-lg;"

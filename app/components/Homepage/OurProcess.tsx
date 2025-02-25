@@ -83,7 +83,7 @@ const OurProcess = () => {
   const StepsComponent = () => {
     return (
       <div className="flex items-center justify-center w-full py-8">
-        <div className="flex items-center gap-4">
+        <div className="flex lg:flex-row md:flex-row flex-col items-center gap-4">
           {steps.map((step, index) => (
             <div key={index} className="flex items-center gap-4">
               {/* Step Icon + Title */}
@@ -104,7 +104,7 @@ const OurProcess = () => {
                   alt="Arrow"
                   width={140}
                   height={40}
-                  className=""
+                  className="lg:block md:block hidden"
                 />
               )}
             </div>
@@ -125,7 +125,9 @@ const OurProcess = () => {
           </label>
         </div>
         <div>
-          <h1 className="italic text-[70px] title">We Design. You Grow</h1>
+          <h1 className="italic lg:text-[70px] md:text-[70px] text-[55px] leading-tight title">
+            We Design. You Grow
+          </h1>
         </div>
 
         <div>
