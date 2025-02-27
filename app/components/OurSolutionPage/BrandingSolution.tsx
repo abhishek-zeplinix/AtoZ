@@ -223,13 +223,15 @@ const BrandingSolutions = () => {
             style={{
               backgroundColor: activeSection === index ? section.bgColor : "",
             }}
-            className={`p-4 cursor-pointer text-xl border-b border-[#475569] last:border-none last:pb-0 relative ${
+            className={`lg:p-4 md:p-4 p-0 cursor-pointer text-xl border-b border-[#475569] last:border-none last:pb-0 relative ${
               activeSection === index ? "text-white" : "hover:bg-gray-100"
             }`}
             onMouseEnter={() => setActiveSection(index)}
             onMouseLeave={() => setActiveSection(null)} // Reset the active section when mouse leaves
           >
-            <h1 className="text-center text-[50px] p-10">{section.title}</h1>
+            <h1 className="text-center text-[50px] p-10 lg:leading-[0px] md:leading-[0px] leading-[50px]">
+              {section.title}
+            </h1>
 
             {/* Render the content below the hovered item with smooth transitions */}
             <div
@@ -239,13 +241,13 @@ const BrandingSolutions = () => {
                   : "max-h-0 opacity-0"
               }`}
             >
-              <div className="grid grid-cols-2 mt-2 p-4 rounded-lg shadow-md">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mt-2 lg:p-4 md:p-4 p-0 rounded-lg shadow-md">
                 <div>
                   <p className="mt-4 text-lg px-10">
                     {section.content.description}
                   </p>
                   <Image
-                    className="absolute left-0 bottom-0"
+                    className="lg:absolute md:absolute hidden left-0 bottom-0"
                     src={section.image}
                     alt=""
                     width={520}
@@ -286,6 +288,13 @@ const BrandingSolutions = () => {
                     </li>
                   ))}
                 </ul>
+                <Image
+                  className="lg:hidden md:hidden block left-0 bottom-0"
+                  src={section.image}
+                  alt=""
+                  width={520}
+                  height={300}
+                />
               </div>
             </div>
           </li>

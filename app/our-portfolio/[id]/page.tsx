@@ -96,23 +96,23 @@ export default function PortfolioDetails(): JSX.Element {
   const data = portfolioData[id];
   return (
     <>
-      <div className="p-8 mx-8">
+      <div className="lg:p-8 md:p-8 p-3 lg:mx-8 md:mx-8 mx-3">
         <div className="mb-5 bg-black text-white rounded-lg px-3 py-1 inline-block">
           {data.label}
         </div>
-        <h1 className="text-[54px] font-light leading-tight mb-4">
+        <h1 className="lg:text-[54px] md:text-[54px] text-[32px] font-light leading-tight mb-4">
           {data.title}
         </h1>
         <div className="">
           <Image
             src={data.images[0]}
             alt="Portfolio Image"
-            className="rounded-lg  w-full h-[500px]"
+            className="rounded-lg  w-full lg:h-[500px] md:h-[500px] h-[250px]"
             width={500}
             height={500}
           />
           <div className="grid grid-cols-5">
-            <div className="col-span-2 mt-5">
+            <div className="lg:col-span-2 md:col-span-2 col-span-5 mt-5">
               <h2 className="text-2xl font-normal">Service</h2>
               <ul className="mt-2">
                 {data.services.map((service) => (
@@ -135,8 +135,8 @@ export default function PortfolioDetails(): JSX.Element {
               </ul>
             </div>
 
-            <div className="mt-6 col-span-3">
-              <div className="bg-[#F8FAFC] p-8 rounded-lg  pr-20">
+            <div className="mt-6 lg:col-span-2 md:col-span-2 col-span-5">
+              <div className="bg-[#F8FAFC] lg:p-8 md:p-8 p-0 rounded-lg  pr-20">
                 <h2 className="text-md font-semibold">Client Overview</h2>
                 <p className="mt-1 text-[#64748B]">{data.clientOverview}</p>
 
@@ -187,7 +187,7 @@ export default function PortfolioDetails(): JSX.Element {
             <Image
               src={data.images[1]}
               alt="Portfolio Image"
-              className="rounded-lg  w-full h-[500px]"
+              className="rounded-lg  w-full lg:h-[500px] md:h-[500px] h-[250px]"
               width={500}
               height={500}
             />
@@ -196,7 +196,7 @@ export default function PortfolioDetails(): JSX.Element {
                 <Image
                   src={data.images[2]}
                   alt="Portfolio Image"
-                  className="rounded-lg  w-full h-[500px]"
+                  className="rounded-lg  w-full lg:h-[500px] md:h-[500px] h-[180px]"
                   width={500}
                   height={500}
                 />
@@ -205,7 +205,7 @@ export default function PortfolioDetails(): JSX.Element {
                 <Image
                   src={data.images[3]}
                   alt="Portfolio Image"
-                  className="rounded-lg  w-full h-[500px]"
+                  className="rounded-lg  w-full lg:h-[500px] md:h-[500px] h-[180px]"
                   width={500}
                   height={500}
                 />

@@ -5,11 +5,11 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-[#131518] text-white rounded-t-[70px] mt-5">
-        <div className="relative flex flex-wrap items-center justify-between p-6 rounded-t-2xl pt-8">
+        <div className="relative flex flex-wrap items-center justify-between lg:p-6 md:p-6 p-0 rounded-t-2xl pt-8">
           {/* Left Section */}
-          <div className="w-full md:w-1/2 space-y-4 flex flex-col justify-between">
-            <div className="flex justify-around">
-              <div className="flex flex-col italic items-start space-y-2 text-xl">
+          <div className="w-full md:w-1/2 lg:w-1/2 space-y-4 flex flex-col justify-between">
+            <div className="flex lg:flex-row flex-col justify-around lg:space-y-0 md:space-y-0 space-y-5">
+              <div className="flex flex-col  italic items-start space-y-2 text-xl lg:px-0 md:px-0 px-6">
                 <Image
                   src="/footer-icon.svg"
                   alt="Logo"
@@ -24,7 +24,7 @@ const Footer = () => {
                   <p>234 567 6776</p>
                 </div>
               </div>
-              <div className="flex flex-col italic items-start space-y-2 text-xl">
+              <div className="flex flex-col italic items-start space-y-2 text-xl lg:px-0 md:px-0 px-6">
                 <Image
                   src="/footer-icon.svg"
                   alt="Logo"
@@ -40,15 +40,15 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="text-left mx-12 ">
-              <p className="italic font-light text-white text-xl mt-5">
+            <div className="text-left lg:mx-12 md:mx-12 mx-2 lg:px-0 md:px-0 px-2">
+              <p className="italic font-light text-white lg:text-xl md:text-xl text-sm mt-5">
                 Copyright ©AtoZMedia All Rights Reserved.
               </p>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/2 text-center relative ">
+          <div className="w-full md:w-1/2 lg:w-1/2 text-center relative hidden lg:block md:block">
             <div className="text-gray-400 absolute top-[-135px] w-full overflow-hidden">
               <Image src="/footertext.svg" alt="" width={520} height={300} />
             </div>

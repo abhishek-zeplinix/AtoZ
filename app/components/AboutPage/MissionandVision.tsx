@@ -24,9 +24,9 @@ const MissionSection = () => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="mx-40 items-center gap-8 border-b border-[#475569] last:border-none pb-10 last:pb-0"
+            className="lg:mx-40 md:mx-40 mx-5 items-center gap-8 border-b border-[#475569] last:border-none pb-10 last:pb-0"
           >
-            <div className="flex justify-between items-start">
+            <div className="flex lg:flex-row md:flex-row flex-col justify-between items-start">
               <h3 className="flex gap-4 items-start text-md font-normal uppercase  text-azText">
                 <Image
                   src="/AboutPage/image/star.svg"
@@ -36,7 +36,9 @@ const MissionSection = () => {
                 />
                 {item.title}
               </h3>
-              <p className="text-gray-700 w-[450px]">{item.description}</p>
+              <p className="text-gray-700 lg:w-[450px] md:w-[450px] w-full lg:mt-0 md:mt-0 mt-3">
+                {item.description}
+              </p>
             </div>
             <div className="flex justify-center mt-7">
               <Image

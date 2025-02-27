@@ -4,10 +4,10 @@ import React from "react";
 const SolutionPageBanner = () => {
   return (
     <div className="relative">
-      <div className="mx-44 flex flex-col">
+      <div className="lg:mx-44 md:mx-44 mx-10 flex flex-col">
         <div className="mt-10 relative">
           {/* Dynamic Title */}
-          <h1 className="text-2xl relative z-10 bg-transparent">
+          <h1 className="lg:text-2xl md:text-2xl text-xl relative z-10 bg-transparent">
             Our Solutions
           </h1>
 
@@ -26,7 +26,7 @@ const SolutionPageBanner = () => {
         <div className="mt-10">
           {/* Dynamic SubText */}
           <div>
-            <span className="text-[80px] leading-tight font-light text-[#131518]">
+            <span className="lg:text-[80px] md:text-[80px] text-[30px] leading-tight font-light text-[#131518]">
               Solutions That <br /> Transform Ideas Into
             </span>
             <br />

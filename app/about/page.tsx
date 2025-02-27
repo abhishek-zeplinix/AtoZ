@@ -13,7 +13,7 @@ const AboutPage = () => {
       <MissionSection />
       <OurCreativity />
       <CreativeMinds />
-      <div className="mt-24">
+      <div className="lg:mt-24 md:mt-24 mt-5">
         <TellUs content="Got a Creative <br /> Challenge for us?" />
       </div>
       <SocialLinks />

@@ -81,7 +81,7 @@ const ProductSlider = () => {
             {testimonials.map((item) => (
               <SwiperSlide key={item.id}>
                 <div
-                  className="rounded-lg overflow-hidden mt-5 relative cursor-pointer"
+                  className="rounded-lg overflow-hidden mt-5 relative cursor-pointer lg:mx-3 md:mx-3 mx-0"
                   onClick={() => handleNavigate(item.id)}
                 >
                   <div className="absolute bg-black text-white rounded-lg px-3 py-1 right-3 top-3">
@@ -90,7 +90,7 @@ const ProductSlider = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-[400px] object-cover rounded-xl"
+                    className="w-full lg:h-[400px] md:h-[400px] h-[300px] object-cover rounded-xl "
                     height={400}
                     width={400}
                   />

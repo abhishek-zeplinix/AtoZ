@@ -14,10 +14,12 @@ const SubPageBanner: React.FC<SubPageBannerProps> = ({
 }) => {
   return (
     <div className="relative">
-      <div className="mx-44 flex flex-col">
+      <div className="lg:mx-44 md:mx-44 mx-10 flex flex-col">
         <div className="mt-10 relative">
           {/* Dynamic Title */}
-          <h1 className="text-2xl relative z-10 bg-transparent">{title}</h1>
+          <h1 className="lg:text-2xl md:text-2xl text-xl relative z-10 bg-transparent">
+            {title}
+          </h1>
 
           {/* Dynamic Icon Image */}
           <div
@@ -38,7 +40,7 @@ const SubPageBanner: React.FC<SubPageBannerProps> = ({
           {/* Dynamic SubText */}
           <div>
             <span
-              className="text-[80px] leading-tight font-light text-[#131518]"
+              className="lg:text-[80px] md:text-[80px] text-[30px] leading-tight font-light text-[#131518]"
               dangerouslySetInnerHTML={{ __html: subText }}
             ></span>
           </div>

@@ -75,7 +75,7 @@ const TechStack = () => {
 };
 const OurCreativity = () => {
   return (
-    <div className="relative bg-[#131518] mt-28 rounded-t-[70px] h-full pb-20">
+    <div className="relative bg-[#131518] mt-28 rounded-t-[70px] h-full pb-20 hidden lg:block md:block">
       <div className="ml-24 leading-tight pt-12 text-white">
         <h1 className="text-[76px]">
           Numbers That

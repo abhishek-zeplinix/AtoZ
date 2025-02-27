@@ -6,7 +6,7 @@ const CreativeMinds = () => {
   const columns = Array.from({ length: 12 });
 
   return (
-    <div className="mx-1">
+    <div className="mx-1 hidden lg:block md:block">
       <div className="relative h-screen w-[100%] mt-16 ">
         <div className="z-40 pt-32">
           <h1 className="text-[80px] text-center leading-tight">

@@ -81,7 +81,7 @@ export default function StepsSection() {
 
   return (
     <>
-      <div className="w-full h-screen overflow-hidden relative mt-28">
+      <div className="w-full lg:h-screen md:h-screen h-[300px] overflow-hidden relative mt-28">
         {/* Background Video */}
         <video
           autoPlay
@@ -94,7 +94,7 @@ export default function StepsSection() {
         </video>
       </div>
 
-      <div className="mt-10 mx-24">
+      <div className="mt-10 lg:mx-24 md:mx-24 mx-5">
         {steps.map((step, index) => (
           <div
             key={index}

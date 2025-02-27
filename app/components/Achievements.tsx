@@ -43,12 +43,12 @@ const ProcessAchievement: React.FC<ProcessAchievementProps> = ({
 
   const processData = data || defaultData;
   return (
-    <div className="bg-custom-gradient text-white py-10 mx-12 rounded-3xl">
+    <div className="bg-custom-gradient text-white py-10 lg:mx-12 md:mx-12 mx-3 rounded-3xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         {/* Title Section */}
         <div className="text-center mb-12">
           <h2
-            className="text-[72px] leading-tight"
+            className="lg:text-[72px] md:text-[72px] text-[32px] leading-tight"
             dangerouslySetInnerHTML={{ __html: mainTitle }}
           ></h2>
         </div>
@@ -58,14 +58,14 @@ const ProcessAchievement: React.FC<ProcessAchievementProps> = ({
           {processData.map((section, index) => (
             <div
               key={index}
-              className="flex justify-between border-b border-[#475569] last:border-none pb-10 last:pb-0"
+              className="flex lg:flex-row md:flex-row flex-col justify-between border-b border-[#475569] last:border-none pb-10 last:pb-0"
             >
               <h3 className="text-xl italic">{section.title}</h3>
-              <ul className="pl-6 space-y-2 text-right">
+              <ul className="lg:pl-6 md:pl-6 pl-0 space-y-2 lg:text-right md:text-right text-left lg:mt-0 md:mt-0 mt-4">
                 {section.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="flex justify-end items-center space-x-2"
+                    className="flex justify-end items-center space-x-2 "
                   >
                     <span className="h-2 w-2 bg-white rounded-full"></span>
                     <span>{item}</span>

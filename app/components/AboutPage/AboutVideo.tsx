@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutVideo = () => {
   return (
-    <div className="w-full h-screen overflow-hidden relative mt-28">
+    <div className="w-full lg:h-screen md:h-screen h-[300px] overflow-hidden relative mt-28">
       {/* Background Video */}
       <video
         autoPlay

@@ -91,9 +91,9 @@ export default function Portfolios() {
     router.push(`/our-portfolio/${encryptedId}`); // Navigate to the dynamic route
   };
   return (
-    <div className="p-6 mx-12">
+    <div className="p-6 lg:mx-12 md:mx-12 mx-5">
       {/* Tabs */}
-      <div className="flex gap-10 mb-8">
+      <div className="lg:flex md:flex flex-wrap gap-10 mb-8 lg:space-y-0 md:space-y-0 space-y-4 lg:space-x-0 md:space-x-0 space-x-2">
         {categories.map((category) => (
           <button
             key={category}
@@ -110,7 +110,7 @@ export default function Portfolios() {
       </div>
 
       {/* Zigzag Layout */}
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-8">
         {/* Column 1 */}
         <div className="flex flex-col gap-8">
           {filteredItems
@@ -140,13 +140,13 @@ export default function Portfolios() {
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-8 mt-20">
+        <div className="flex flex-col gap-8 lg:mt-20 md:mt-20 mt-5">
           {filteredItems
             .filter((_, index) => index % 2 !== 0) // Cards for column 2
             .map((item) => (
               <div
                 key={item.id}
-                className="rounded-lg overflow-hidden mt-20 relative cursor-pointer"
+                className="rounded-lg overflow-hidden lg:mt-20 md:mt-20 mt-5 relative cursor-pointer"
                 onClick={() => handleNavigate(item.id)}
               >
                 <div className="absolute bg-black text-white rounded-lg px-3 py-1 right-5 top-5">
